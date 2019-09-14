@@ -1,0 +1,52 @@
+---
+title: "My First Markdown"
+author: "Shashank"
+date: "9/14/2019"
+output: html_document
+---
+
+Bold - **bold**  
+Italics - _Italics_
+
+Italics the other way - *Italics*
+
+# Title
+## Subtitle
+### Section Title
+#### Subsection Title
+
+- Bullet List 1  
+- Bullet List 2  
+- Bullet List 3  
+
+1.Ordered List 1
+5.Order 2
+2.Ordered List 2
+4.Ordered List 3
+
+# ggplot
+ggplot is so cool....
+
+
+```{r first_chunk, echo=FALSE, results='hide', eval=TRUE, warning=FALSE}
+gapminder<-read.table("gapminder.txt",header=TRUE)
+head(gapminder)
+
+```
+
+```{r plot, fig.height=5, fig.width=7}
+library("ggplot2")
+ggplot(gapminder,aes(x=gdpPercap, y=lifeExp, color=continent))+
+         geom_point()
+```
+
+The mean life expentancy of Swedeen is `r mean(gapminder[gapminder$country=="Sweden","lifeExp"])`
+
+
+
+
+
+
+
+
+
